@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Save the Date · Johanna &amp; Leonardo · 20 Febrero 2027</title>
+<meta name="description" content="Aparta la fecha: Johanna y Leonardo se casan el sábado 20 de febrero de 2027 en Tequesquitengo, Morelos.">
+<meta name="theme-color" content="#FFF6EC">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://save-the-date-johanna-y-leonardo.vercel.app/">
+<meta property="og:title" content="Save the Date · Johanna &amp; Leonardo">
+<meta property="og:description" content="Sábado 20 de febrero de 2027 · Tequesquitengo, Morelos">
+<meta property="og:image" content="https://save-the-date-johanna-y-leonardo.vercel.app/og-image.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="preload" as="image" href="sobre.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF6EC; --surface:#FFEDE9; --cream:#FFECD4; --blush:#FFDBD8; --coral:#FF8C82;
+  --green:#76BB40; --blue:#638B9B; --olive:#526A00; --olive-dk:#3D5000; --ink:#2C3A1E;
+  --gold-dk:#6B4E16; --gold:#B8924A; --gold-lt:#E6CC8F;
+  --foil:linear-gradient(100deg,#6B4E16 0%,#8C6A28 25%,#B8924A 50%,#8C6A28 75%,#6B4E16 100%);
+  --foil-dark:linear-gradient(100deg,#C9A35A 0%,#E6CC8F 25%,#FFFBEA 50%,#E6CC8F 75%,#C9A35A 100%);
+  --serif:'Cormorant Garamond',Georgia,serif; --script:'Pinyon Script',cursive;
+  --ease:cubic-bezier(.16,.84,.24,1);
+  --gut:clamp(20px,5vw,64px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{position:relative;font-family:var(--serif);font-weight:500;font-size:clamp(18px,1vw + 14px,22px);line-height:1.65;color:var(--ink);background:transparent;overflow-x:clip;font-variant-numeric:lining-nums}
+body.locked{overflow:hidden;height:100vh;height:100svh}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- utilidades ---------- */
+.caps{font-weight:700;font-size:clamp(14px,.35vw + 13px,17px);letter-spacing:.3em;text-transform:uppercase;padding-left:.3em;color:var(--olive);line-height:1.5}
+.foil{background:var(--foil);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold-dk);
+  animation:goldSweep 7s ease-in-out infinite;padding:.22em .45em;margin:-.22em -.45em;line-height:1.25;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.foil-dark{background-image:var(--foil-dark)}
+@keyframes goldSweep{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+@keyframes lev{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -9px;rotate:var(--rot,.5deg)}}
+.lev{animation:lev var(--dur,6.5s) ease-in-out var(--d,0s) infinite}
+.js .rv{opacity:0;transform:translate3d(0,30px,0) scale(.98);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:calc(var(--i,0) * 100ms)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- secciones continuas ---------- */
+.sec{position:relative;padding:clamp(54px,8vh,96px) var(--gut);text-align:center;overflow-x:clip}
+.sec-in{position:relative;max-width:720px;margin:0 auto}
+h2{font-family:var(--script);font-weight:400;font-size:clamp(44px,5vw + 26px,84px);line-height:1.2;margin:8px 0 18px}
+h2 .foil{display:inline-block}
+.sec p{font-size:clamp(19px,.7vw + 16px,24px);line-height:1.65}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:clamp(20px,3vh,30px) auto;color:var(--gold)}
+.rule i{display:block;height:1px;width:clamp(64px,12vw,140px);background:linear-gradient(90deg,transparent,currentColor)}
+.rule i:last-child{transform:scaleX(-1)}
+.rule b{width:8px;height:8px;background:currentColor;transform:rotate(45deg)}
+
+/* tintas: salen 180px y se funden con la sección vecina */
+.ink-bg{position:absolute;z-index:-2;top:-180px;bottom:-180px;left:-10%;right:-10%;overflow:hidden;pointer-events:none;opacity:.68;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 34%,#000 66%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 34%,#000 66%,transparent 100%)}
+.ink-bg i{--fx:1;position:absolute;inset:0;background:center/cover no-repeat;animation:inkDrift 24s ease-in-out infinite alternate}
+.ink-bg.flip i{--fx:-1}
+.ink-bg.d2 i{animation-duration:28s;animation-delay:-9s;animation-direction:alternate-reverse}
+@keyframes inkDrift{0%{transform:translate(-3%,-2%) rotate(-1deg) scale(1.03) scaleX(var(--fx))}100%{transform:translate(3%,2%) rotate(1deg) scale(1.14) scaleX(var(--fx))}}
+
+/* adornos: siempre detrás y en las orillas */
+.orn{position:absolute;z-index:-1;height:auto;max-width:none;pointer-events:none;user-select:none;width:var(--w);animation:ornLive 7.5s ease-in-out var(--d,0s) infinite}
+.orn.soft{opacity:.32;filter:blur(1.6px)}
+@keyframes ornLive{0%,100%{translate:0 0;rotate:0deg}35%{translate:3px -7px;rotate:2.5deg}70%{translate:-3px -3px;rotate:-2.5deg}}
+
+/* pétalos */
+#petals{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:0;height:auto;will-change:transform,opacity}
+.petal.big{filter:blur(1.7px)}
+
+/* ---------- sobre ---------- */
+#sobre{position:fixed;inset:0;z-index:60;cursor:pointer;overflow:hidden;background:#F5E9D8;transition:opacity 1s var(--ease),visibility 1s;touch-action:manipulation}
+#sobre::before{content:"";position:absolute;inset:-6%;background:url('sobre.jpg') center/cover;filter:blur(22px) brightness(.96);display:none}
+.sobre-stage{position:absolute;inset:0}
+.sobre-img,.sobre-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%}
+.sobre-vid{opacity:0;transition:opacity .35s}
+#sobre.open .sobre-vid{opacity:1}
+.sobre-img{animation:breath 6s ease-in-out infinite}
+@keyframes breath{50%{transform:scale(1.022)}}
+.sobre-hint{position:absolute;z-index:3;left:50%;bottom:max(clamp(38px,8vh,76px),env(safe-area-inset-bottom));transform:translateX(-50%);white-space:nowrap;
+  padding:13px 26px;border-radius:40px;background:rgba(255,246,236,.82);border:1px solid rgba(184,146,74,.7);color:var(--olive);font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;transition:opacity .35s}
+#sobre.open .sobre-hint{opacity:0}
+#sobre.out{opacity:0;visibility:hidden;pointer-events:none}
+@media (min-aspect-ratio:4/5){
+  #sobre::before{display:block}
+  .sobre-stage{left:50%;right:auto;width:auto;height:100%;aspect-ratio:9/16;transform:translateX(-50%);box-shadow:0 0 90px rgba(61,80,0,.28)}
+}
+
+/* ---------- portada ---------- */
+.hero{position:relative;z-index:1;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;text-align:center;color:#FFF6EC;overflow:hidden;
+  padding:clamp(90px,14vh,130px) 20px clamp(92px,13vh,126px)}
+.hero-photo{position:absolute;inset:-12% 0;z-index:-3;overflow:hidden;will-change:transform}
+.hero-drift{position:absolute;inset:0;animation:heroDrift 20s ease-in-out infinite alternate}
+.hero-drift img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 34%}
+@keyframes heroDrift{0%{transform:translate3d(-1.8%,1.2%,0) scale(1.04)}100%{transform:translate3d(1.8%,-1.2%,0) scale(1.14)}}
+.hero-glow{position:absolute;inset:0;z-index:-2;mix-blend-mode:screen;pointer-events:none;overflow:hidden}
+.hero-glow b{position:absolute;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(230,204,143,.34),rgba(230,204,143,.1) 42%,transparent 70%);animation:glow 26s ease-in-out infinite alternate}
+.hero-glow b:nth-child(1){width:68%;left:-14%;top:4%}
+.hero-glow b:nth-child(2){width:54%;right:-12%;top:30%;animation-duration:31s;animation-direction:alternate-reverse}
+.hero-glow b:nth-child(3){width:42%;left:30%;top:58%;animation-duration:23s}
+@keyframes glow{0%{transform:translate(-5%,4%);opacity:.3}100%{transform:translate(12%,-9%);opacity:.6}}
+.hero-veil{position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(ellipse 88% 76% at 50% 44%,transparent 54%,rgba(28,34,16,.3) 100%),
+  linear-gradient(to bottom,rgba(28,34,16,0) 0%,rgba(28,34,16,0) 38%,rgba(28,34,16,.44) 58%,rgba(28,34,16,.76) 82%,rgba(28,34,16,.82) 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:74px;z-index:0;pointer-events:none;background:linear-gradient(to top,#FFF6EC 0%,rgba(255,246,236,.68) 36%,rgba(255,246,236,0) 100%)}
+.hero-in{position:relative;z-index:2;width:100%;max-width:1160px;will-change:transform,opacity}
+.hero .caps{color:#FFF6EC}
+.hero-eye{display:flex;align-items:center;justify-content:center;gap:14px}
+.hero-eye i{height:1px;width:clamp(36px,10vw,120px);background:linear-gradient(90deg,transparent,var(--gold-lt))}
+.hero-eye i:last-child{transform:scaleX(-1)}
+.names{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(52px,min(14vw,9.2vh),76px);line-height:1;margin:clamp(14px,2.4vh,26px) 0 clamp(14px,2.2vh,22px)}
+.names .row{display:block;white-space:nowrap}
+.names .row .foil{display:inline-block}
+.names .amp{display:block;font-family:var(--script);font-style:normal;font-size:1em;line-height:.9;color:var(--gold-lt);margin:.04em 0}
+.hero-date{display:inline-flex;align-items:center;gap:clamp(13px,2.4vw,28px);font-weight:700;font-size:clamp(23px,1.6vw + 16px,36px);letter-spacing:.12em;line-height:1.05;color:#fff}
+.hero-date span{display:flex;flex-direction:column;align-items:center}
+.hero-date small{font-size:clamp(13px,.3vw + 12px,15px);font-weight:700;letter-spacing:.2em;color:var(--gold-lt);margin-top:7px}
+.hero-date i{width:1px;height:clamp(36px,6vw,54px);background:linear-gradient(transparent,var(--gold-lt),transparent)}
+.hero-place{margin-top:clamp(10px,1.8vh,18px);font-size:clamp(19px,.8vw + 16px,26px);font-weight:600;color:#FFF6EC}
+.hero .fade{opacity:0;transform:translate3d(0,20px,0);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}
+.go .fade{opacity:1;transform:none}
+.go .t2{transition-delay:.35s}.go .t3{transition-delay:.7s}.go .t4{transition-delay:1.05s}.go .t5{transition-delay:1.5s}
+.cue{position:absolute;z-index:3;left:50%;bottom:clamp(20px,3.6vh,34px);width:26px;height:42px;margin-left:-13px;border:1.5px solid var(--olive);border-radius:15px;background:rgba(255,246,236,.5)}
+.cue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:9px;margin-left:-1.5px;border-radius:2px;background:var(--olive);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}35%{opacity:1}100%{opacity:0;transform:translateY(13px)}}
+
+/* ---------- nos casamos ---------- */
+.love-card{position:relative;max-width:620px;margin:0 auto;padding:clamp(38px,6vw,62px) clamp(24px,6vw,62px);border-radius:26px;background:rgba(255,255,255,.72);border:1px solid rgba(184,146,74,.46);box-shadow:0 22px 54px -24px rgba(44,58,30,.34)}
+.love-card .quote{font-style:italic;font-weight:600;color:var(--olive);line-height:1.4}
+
+/* ---------- calendario ---------- */
+.s-cal .sec-in{max-width:1080px}
+.cal-grid{display:grid;gap:clamp(30px,5vw,72px);align-items:center;margin-top:clamp(12px,2vh,24px)}
+.cal{width:100%;max-width:410px;margin:0 auto;overflow:hidden;border-radius:18px;background:#fff;border:1px solid rgba(184,146,74,.45);box-shadow:0 34px 70px -34px rgba(44,58,30,.5);transition:transform .45s var(--ease)}
+.cal-wrap{perspective:1200px}
+.cal-top{position:relative;overflow:hidden;padding:18px 10px 14px;color:#fff;background:linear-gradient(135deg,#6E8C12,var(--olive) 52%,var(--olive-dk));font-family:var(--script);font-size:clamp(38px,4vw,48px);line-height:1.15}
+.cal-top small{display:block;font-family:var(--serif);font-weight:700;font-size:15px;letter-spacing:.34em;padding-left:.34em;color:var(--blush);margin-top:2px}
+.cal-top::after{content:"";position:absolute;inset:-30%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.38) 50%,transparent 58%);animation:glint 6s ease-in-out infinite}
+@keyframes glint{0%,55%{transform:translateX(-100%)}85%,100%{transform:translateX(100%)}}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:16px clamp(12px,3vw,18px) 20px}
+.days span{height:clamp(38px,10vw,46px);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:clamp(18px,.6vw + 16px,20px);color:var(--ink)}
+.days .h{height:30px;font-weight:700;font-size:15px;color:var(--blue)}
+.days .day{position:relative;z-index:0;color:#fff;font-weight:700}
+.days .day::before{content:"";position:absolute;z-index:-1;inset:-3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F4766B' d='M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z'/%3E%3C/svg%3E") center/contain no-repeat;animation:beat 1.8s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}20%{transform:scale(1.14)}40%{transform:scale(1)}}
+.when{font-weight:700;font-size:clamp(20px,.7vw + 17px,26px);line-height:1.4;color:var(--olive)}
+.city{font-weight:600;font-size:clamp(19px,.6vw + 17px,24px);color:var(--ink);margin-top:4px}
+.ticket{margin:clamp(20px,3vh,28px) auto 0;max-width:460px;padding:20px 12px 18px;border-radius:18px;color:#FFF6EC;background:linear-gradient(140deg,#657F0D,var(--olive) 54%,var(--olive-dk));box-shadow:0 26px 54px -28px rgba(61,80,0,.85)}
+.ticket .caps{color:#FFECD4}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);margin-top:8px}
+.cd div{min-width:0;border-left:1px solid rgba(255,236,212,.3)}
+.cd div:first-child{border:0}
+.cd b{display:block;font-weight:600;font-size:clamp(34px,3vw + 22px,54px);line-height:1.1;font-variant-numeric:lining-nums tabular-nums}
+.cd span{font-weight:700;font-size:14px;letter-spacing:.08em;color:#FFECD4}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;margin-top:clamp(20px,3vh,28px);padding:13px 26px;border-radius:40px;background:var(--olive);color:#fff;font-weight:700;font-size:18px;letter-spacing:.04em;text-decoration:none;box-shadow:0 12px 26px -12px rgba(61,80,0,.7);transition:transform .25s var(--ease),background .25s}
+.btn:hover{background:var(--olive-dk);transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:19px;height:19px}
+
+/* ---------- destino ---------- */
+.s-dest .sec-in{max-width:1080px}
+.dest-grid{display:grid;gap:clamp(26px,5vw,64px);align-items:center;margin-top:clamp(12px,2vh,22px)}
+.dest-photo{width:100%;max-width:520px;margin:0 auto;aspect-ratio:3/2;overflow:hidden;border-radius:22px;border:1px solid rgba(184,146,74,.6);box-shadow:0 28px 60px -28px rgba(44,58,30,.5)}
+.dest-photo img{width:100%;height:100%;object-fit:cover}
+.dest-name{font-weight:700;font-size:clamp(27px,1.4vw + 22px,38px);line-height:1.2;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:16px}
+.chips span{padding:7px 16px;border-radius:30px;background:rgba(255,255,255,.76);border:1px solid rgba(184,146,74,.5);font-weight:700;font-size:17px;color:var(--olive)}
+
+/* ---------- muy pronto ---------- */
+.rain{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 84%,transparent)}
+.drop{position:absolute;top:-70px;left:var(--x);width:var(--w);opacity:var(--o);animation:fall var(--t) linear var(--dl) infinite}
+.drop svg{display:block;width:100%;height:auto;animation:sway calc(var(--t) / 3) ease-in-out var(--dl) infinite alternate}
+@keyframes fall{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(0,var(--h,1100px),0)}}
+@keyframes sway{from{transform:translateX(-18px) rotate(-14deg)}to{transform:translateX(18px) rotate(14deg)}}
+.s-soon:not(.raining) .drop,.s-soon:not(.raining) .drop svg{animation-play-state:paused}
+.soon-card{position:relative;max-width:610px;margin:0 auto;padding:clamp(36px,6vw,58px) clamp(22px,6vw,58px);border-radius:26px;background:rgba(255,255,255,.76);border:1px solid rgba(184,146,74,.46);box-shadow:0 22px 54px -24px rgba(44,58,30,.34)}
+.big-env{position:relative;width:clamp(190px,44vw,260px);aspect-ratio:1.45;margin:clamp(48px,7vh,70px) auto 26px;perspective:900px}
+.be-back,.be-front,.be-flap,.be-card{position:absolute}
+.be-back{inset:0;border-radius:6px;background:linear-gradient(160deg,#FFF8EE,#F7E6CF);box-shadow:0 22px 44px -22px rgba(61,80,0,.55)}
+.be-card{left:8%;right:8%;top:8%;height:92%;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:4px;background:#fff;border:1px solid rgba(184,146,74,.55);transition:transform 1.3s var(--ease) .9s}
+.be-card span{font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--olive)}
+.be-card b{font-weight:700;font-size:clamp(20px,5vw,26px);color:var(--gold-dk);white-space:nowrap}
+.be-front{inset:0;z-index:2;border-radius:0 0 6px 6px;background:linear-gradient(200deg,#FFF3E2,#F8DFC8);clip-path:polygon(0 0,50% 68%,100% 0,100% 100%,0 100%)}
+.be-flap{inset:0;z-index:3;transform-origin:50% 0;transition:transform 1s cubic-bezier(.6,0,.3,1) .35s}
+.be-flap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#FFF0DE,#F4D8BC);clip-path:polygon(0 0,100% 0,50% 68%)}
+.be-seal{position:absolute;z-index:4;left:50%;top:58%;width:25%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:url('favicon.png') center/cover;box-shadow:0 4px 10px rgba(44,58,30,.35);transition:opacity .4s,transform .5s}
+.big-env.open .be-seal{opacity:0;transform:translate(-50%,-50%) scale(.35)}
+.big-env.open .be-flap{transform:rotateX(180deg);z-index:0}
+.big-env.open .be-card{transform:translateY(-54%)}
+
+/* ---------- pie ---------- */
+footer{position:relative;padding:clamp(46px,7vh,76px) 22px clamp(100px,13vh,126px);text-align:center;overflow-x:clip}
+.names-foot{display:inline-block;font-family:var(--script);font-size:clamp(46px,5vw + 28px,78px);line-height:1.2}
+.foot-date{margin-top:8px}
+.credit{margin-top:22px;font-size:17px;font-weight:600;color:var(--ink)}
+.credit a{color:var(--olive);text-decoration:none;border-bottom:1px solid rgba(82,106,0,.45)}
+
+/* ---------- vinilo ---------- */
+.vinyl-btn{position:fixed;z-index:50;right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));width:60px;height:60px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;opacity:0;transform:scale(.7);pointer-events:none;transition:opacity .6s,transform .35s var(--ease);box-shadow:0 7px 20px rgba(44,58,30,.42),0 0 0 1px rgba(184,146,74,.65)}
+.vinyl-btn.ready{opacity:1;transform:none;pointer-events:auto}
+.vinyl-spin{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:conic-gradient(from 20deg,rgba(255,255,255,.12),transparent 22%,rgba(255,255,255,.08) 48%,transparent 72%,rgba(255,255,255,.12)),repeating-radial-gradient(circle,#101010 0 1.5px,#242424 1.5px 3px)}
+.vinyl-spin::after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px;border-radius:50%;background:#E6CC8F;box-shadow:0 0 0 2px #111}
+.vinyl-btn.playing .vinyl-spin{animation:vinyl 1.8s linear infinite}
+@keyframes vinyl{to{transform:rotate(360deg)}}
+.arm{position:absolute;top:-5px;right:-3px;width:22px;height:36px;z-index:2;transform-origin:82% 8%;transform:rotate(-30deg);transition:transform .6s var(--ease);pointer-events:none}
+.vinyl-btn.playing .arm{transform:rotate(-12deg)}
+.arm::before{content:"";position:absolute;top:1px;right:1px;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle,#F3DFA8,#B8924A)}
+.arm::after{content:"";position:absolute;top:5px;right:4px;width:2px;height:27px;border-radius:2px;background:linear-gradient(#E6CC8F,#B8924A);box-shadow:-1px 27px 0 1px #B8924A}
+
+/* ---------- responsivo ---------- */
+@media (min-width:760px){
+  .names{font-size:clamp(68px,min(9vw,11vh),112px)}
+  .sec{padding-top:clamp(66px,9vh,104px);padding-bottom:clamp(66px,9vh,104px)}
+}
+@media (min-width:960px){
+  .names{font-size:clamp(76px,min(6.6vw,13vh),120px)}
+  .names .row{display:inline-block;vertical-align:baseline}
+  .names .amp{display:inline-block;font-size:.72em;margin:0 .18em}
+  .hero-drift img{object-position:50% 40%}
+  .cal-grid,.dest-grid{grid-template-columns:1fr 1fr}
+  .cal-side,.dest-side{text-align:left}
+  .cal-side .rule,.dest-side .rule{justify-content:flex-start}
+  .ticket{margin-left:0}
+  .chips{justify-content:flex-start}
+}
+@media (max-width:360px){
+  .s-love .orn,.s-cal .orn,.s-dest .orn{width:44px!important}
+  .names{font-size:clamp(46px,14.5vw,52px)}
+  .caps{letter-spacing:.2em;padding-left:.2em}
+  .hero-date{font-size:21px}
+  .cd b{font-size:31px}
+}
+@media (max-height:560px) and (orientation:landscape){
+  .hero{padding:44px 20px 42px}
+  .names{font-size:clamp(40px,8.5vw,70px);margin:8px 0}
+  .names .row{display:inline-block}
+  .names .amp{display:inline-block;font-size:.72em;margin:0 .18em}
+  .hero-date{font-size:21px}
+  .hero-date small{margin-top:3px}
+  .hero-place{font-size:18px;margin-top:6px}
+  .cue{display:none}
+  .sobre-hint{bottom:16px;padding:9px 20px}
+}
+@media (max-width:959px),(max-height:560px){
+  .orn{width:min(var(--w),64px)!important}
+  footer .orn{width:min(var(--w),190px)!important;margin-left:-95px!important}
+  .s-love .orn:nth-of-type(1){top:-6px!important;left:-10px!important}
+  .s-love .orn:nth-of-type(2){bottom:-8px!important;right:-8px!important}
+  .s-cal .orn:nth-of-type(1){top:auto!important;bottom:-8px!important;left:-12px!important}
+  .s-cal .orn:nth-of-type(2){top:-10px!important;right:-10px!important}
+  .s-dest .orn:nth-of-type(1){top:-10px!important;left:-10px!important}
+  .s-dest .orn:nth-of-type(2){bottom:-10px!important;right:-12px!important}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .fade,.js .rv{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body class="locked">
+<script>document.documentElement.classList.add('js')</script>
+<div id="petals" aria-hidden="true"></div>
+
+<!-- SOBRE -->
+<div id="sobre" role="button" tabindex="0" aria-label="Toca para abrir el sobre">
+  <div class="sobre-stage">
+    <img class="sobre-img" src="sobre.jpg" alt="Sobre con sello J y L" fetchpriority="high">
+    <video class="sobre-vid" id="sobreVid" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-johanna-y-leonardo/sobre-apertura.mp4" muted playsinline preload="auto" poster="sobre.jpg"></video>
+  </div>
+  <p class="sobre-hint">Toca para abrir</p>
+</div>
+
+<!-- PORTADA -->
+<header class="hero" id="hero">
+  <div class="hero-photo" id="heroPhoto" aria-hidden="true"><div class="hero-drift">
+    <picture><source media="(min-aspect-ratio:1/1)" srcset="hero-wide.jpg"><img src="hero-v.jpg" alt=""></picture>
+  </div></div>
+  <div class="hero-glow" aria-hidden="true"><b></b><b></b><b></b></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-in" id="heroIn">
+    <div class="hero-eye fade"><i></i><p class="caps">Save the date</p><i></i></div>
+    <h1 class="names fade t2" aria-label="Johanna y Leonardo">
+      <span class="row"><span class="foil foil-dark">Johanna</span></span>
+      <span class="amp">&amp;</span>
+      <span class="row"><span class="foil foil-dark" style="animation-delay:-2.3s">Leonardo</span></span>
+    </h1>
+    <div class="hero-date fade t3" aria-label="Sábado 20 de febrero de 2027">
+      <span>SÁB<small>DÍA</small></span><i></i><span>20<small>FEB</small></span><i></i><span>2027<small>AÑO</small></span>
+    </div>
+    <p class="hero-place fade t4">Tequesquitengo, Morelos</p>
+  </div>
+  <div class="cue fade t5" aria-hidden="true"></div>
+</header>
+
+<main>
+  <!-- NOS CASAMOS -->
+  <section class="sec s-love">
+    <div class="ink-bg" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
+    <img class="orn" src="adornos/esq-grande.webp" alt="" aria-hidden="true" style="--w:clamp(92px,15vw,210px);top:-6px;left:-20px;--d:-1.2s" onerror="this.remove()">
+    <img class="orn" src="adornos/rama-1.webp" alt="" aria-hidden="true" style="--w:clamp(82px,13vw,180px);bottom:-30px;right:-14px;--d:-4s" onerror="this.remove()">
+    <div class="sec-in">
+      <div class="lev" style="--dur:7.5s">
+        <div class="love-card rv">
+          <p class="caps rv" style="--i:1">Una noticia especial</p>
+          <h2 class="rv" style="--i:2"><span class="foil">¡Nos casamos!</span></h2>
+          <p class="rv" style="--i:3">Con mucha ilusión queremos contarte que decidimos unir nuestras vidas, y no imaginamos ese día sin ti.</p>
+          <div class="rule rv" style="--i:4" aria-hidden="true"><i></i><b></b><i></i></div>
+          <p class="quote rv" style="--i:5">Guarda esta fecha<br>para celebrar con nosotros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section class="sec s-cal">
+    <div class="ink-bg d2 flip" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
+    <img class="orn soft" src="adornos/hoja-5.webp" alt="" aria-hidden="true" style="--w:clamp(70px,9vw,130px);top:40%;left:-30px;--d:-2s" onerror="this.remove()">
+    <img class="orn" src="adornos/esquina.webp" alt="" aria-hidden="true" style="--w:clamp(86px,13vw,190px);top:-12px;right:-18px;transform:scaleX(-1);--d:-5s" onerror="this.remove()">
+    <div class="sec-in">
+      <p class="caps rv">Aparta la fecha</p>
+      <h2 class="rv" style="--i:1"><span class="foil">Márcalo en tu calendario</span></h2>
+      <div class="cal-grid">
+        <div class="cal-wrap rv" style="--i:2">
+          <div class="lev" style="--rot:-.5deg">
+            <div class="cal" id="cal" aria-label="Calendario de febrero de 2027 con el sábado 20 marcado">
+              <div class="cal-top">Febrero<small>2027</small></div>
+              <div class="days">
+                <span class="h">D</span><span class="h">L</span><span class="h">M</span><span class="h">M</span><span class="h">J</span><span class="h">V</span><span class="h">S</span>
+                <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span class="day">20</span>
+                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                <span>28</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cal-side">
+          <p class="when rv" style="--i:3">Sábado 20 de febrero de 2027</p>
+          <p class="city rv" style="--i:4">Tequesquitengo, Morelos</p>
+          <div class="rule rv" style="--i:5" aria-hidden="true"><i></i><b></b><i></i></div>
+          <div class="ticket rv" style="--i:6">
+            <p class="caps">Faltan</p>
+            <div class="cd">
+              <div><b id="cd-d">—</b><span>Días</span></div>
+              <div><b id="cd-h">—</b><span>Horas</span></div>
+              <div><b id="cd-m">—</b><span>Min</span></div>
+              <div><b id="cd-s">—</b><span>Seg</span></div>
+            </div>
+          </div>
+          <a class="btn rv" style="--i:7" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Johanna+%26+Leonardo&dates=20270220T223000Z/20270221T070000Z&details=Save+the+date.+Muy+pronto+recibir%C3%A1s+la+invitaci%C3%B3n.&location=Jard%C3%ADn+del+Lago%2C+Tequesquitengo%2C+Morelos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
+            Agregar al calendario
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINO -->
+  <section class="sec s-dest">
+    <div class="ink-bg" aria-hidden="true"><i style="background-image:url(ink/ink-footer.webp)"></i></div>
+    <img class="orn" src="adornos/esq-rama.webp" alt="" aria-hidden="true" style="--w:clamp(84px,12vw,170px);top:-8px;left:-16px;--d:-3s" onerror="this.remove()">
+    <img class="orn soft" src="adornos/hoja-1.webp" alt="" aria-hidden="true" style="--w:clamp(70px,9vw,130px);bottom:0;right:-22px;--d:-6s" onerror="this.remove()">
+    <div class="sec-in">
+      <p class="caps rv">Nuestro destino</p>
+      <h2 class="rv" style="--i:1"><span class="foil">Te esperamos en el lago</span></h2>
+      <div class="dest-grid">
+        <div class="lev rv" style="--i:2;--dur:8s;--d:-2s"><div class="dest-photo"><img src="venue.jpg" alt="Jardín del Lago, a la orilla del lago de Tequesquitengo" loading="lazy"></div></div>
+        <div class="dest-side">
+          <p class="dest-name rv" style="--i:3">Jardín del Lago</p>
+          <p class="rv" style="--i:4">Tequesquitengo, Morelos. Si vienes de fuera, te recomendamos planear tu viaje con tiempo.</p>
+          <div class="rule rv" style="--i:5" aria-hidden="true"><i></i><b></b><i></i></div>
+          <div class="chips rv" style="--i:6"><span>Vestimenta formal</span><span>Solo adultos</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUY PRONTO -->
+  <section class="sec s-soon" id="soon">
+    <div class="ink-bg d2" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
+    <div class="rain" id="rain" aria-hidden="true"></div>
+    <div class="sec-in">
+      <div class="lev" style="--dur:8.5s;--rot:.4deg">
+        <div class="soon-card rv">
+          <div class="big-env" id="bigEnv" aria-hidden="true">
+            <span class="be-back"></span>
+            <span class="be-card"><span>SAVE THE DATE</span><b>20 · 02 · 2027</b></span>
+            <span class="be-front"></span><span class="be-flap"></span><span class="be-seal"></span>
+          </div>
+          <p class="caps rv" style="--i:1">Muy pronto</p>
+          <h2 class="rv" style="--i:2"><span class="foil">Tu invitación va en camino</span></h2>
+          <p class="rv" style="--i:3">Recibirás todos los detalles: horarios, ubicación y la confirmación de tu asistencia. Por ahora, solo guarda este día para nosotros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img class="orn" src="adornos/guirnalda.webp" alt="" aria-hidden="true" style="--w:clamp(180px,24vw,320px);top:0;left:50%;margin-left:calc(var(--w) / -2);--d:-2s" onerror="this.remove()">
+  <p style="height:clamp(30px,5vh,50px)" aria-hidden="true"></p>
+  <p class="names-foot foil rv">Johanna &amp; Leonardo</p>
+  <p class="foot-date caps rv" style="--i:1">20 · 02 · 2027</p>
+  <p class="credit">Invitación digital por <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener">@elysium.invitaciones</a></p>
+</footer>
+
+<audio id="music" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-johanna-y-leonardo/cancion.mp3" loop preload="none" playsinline></audio>
+<button class="vinyl-btn" id="vinyl" type="button" aria-label="Reproducir música"><span class="arm" aria-hidden="true"></span><span class="vinyl-spin" aria-hidden="true"></span></button>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sobre = document.getElementById('sobre'), vid = document.getElementById('sobreVid'),
+      music = document.getElementById('music'), vinyl = document.getElementById('vinyl'), hero = document.getElementById('hero');
+  var opened = false, done = false;
+
+  /* música */
+  function ui(on){ vinyl.classList.toggle('playing', on); vinyl.setAttribute('aria-label', on ? 'Pausar música' : 'Reproducir música'); }
+  music.addEventListener('play', function(){ ui(true); });
+  music.addEventListener('pause', function(){ ui(false); });
+  music.addEventListener('loadedmetadata', function(){ try { if (music.currentTime < .5) music.currentTime = .5; } catch(e){} }, {once:true});
+  function playMusic(){ try { music.volume = .6; var p = music.play(); if (p && p.catch) p.catch(function(){}); } catch(e){} }
+  vinyl.addEventListener('click', function(){ if (music.paused) playMusic(); else music.pause(); });
+
+  /* sobre */
+  function finish(){
+    if (done) return; done = true;
+    sobre.classList.add('out');
+    document.body.classList.remove('locked');
+    hero.classList.add('go');
+    vinyl.classList.add('ready');
+    setTimeout(function(){ sobre.style.display = 'none'; }, 1050);
+    startPetals();
+  }
+  function abrir(e){
+    if (opened) return; opened = true;
+    if (e && e.preventDefault) e.preventDefault();
+    playMusic();
+    sobre.classList.add('open');
+    try { var v = vid.play(); if (v && v.catch) v.catch(function(){ setTimeout(finish, 500); }); } catch(err){ setTimeout(finish, 500); }
+    vid.addEventListener('timeupdate', function(){ if (vid.currentTime >= 6.5) finish(); });
+    vid.addEventListener('ended', finish, {once:true});
+    vid.addEventListener('error', finish, {once:true});
+    setTimeout(finish, 9000);
+  }
+  sobre.addEventListener('click', abrir);
+  sobre.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') abrir(e); });
+
+  /* apariciones */
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }); }, {rootMargin:'0px 0px -5% 0px', threshold:.01});
+    rv.forEach(function(el){ io.observe(el); });
+  } else rv.forEach(function(el){ el.classList.add('in'); });
+
+  /* lluvia de sobres */
+  var rain = document.getElementById('rain'), soon = document.getElementById('soon'), big = document.getElementById('bigEnv');
+  var mobile = innerWidth < 600, ND = reduce ? 0 : (mobile ? 12 : 20);
+  for (var k = 0; k < ND; k++){
+    var depth = k % 3, w = [18, 27, 38][depth] + Math.random() * 6;
+    var d = document.createElement('div'); d.className = 'drop';
+    d.style.cssText = '--x:' + (Math.random() * 96).toFixed(1) + '%;--w:' + w.toFixed(0) + 'px;--t:' + ([18, 14, 11][depth] + Math.random() * 4).toFixed(1) + 's;--dl:-' + (Math.random() * 18).toFixed(1) + 's;--o:' + [.42, .62, .82][depth];
+    d.innerHTML = '<svg viewBox="0 0 58 40"><rect x="1" y="1" width="56" height="38" rx="2" fill="#FFF8EE" stroke="#B8924A"/><path d="M1 3l28 20L57 3" fill="#F8E6CE" stroke="#B8924A"/><circle cx="29" cy="22" r="4.5" fill="#526A00"/></svg>';
+    rain.appendChild(d);
+  }
+  function rainH(){ rain.style.setProperty('--h', (soon.offsetHeight + 150) + 'px'); }
+  rainH(); addEventListener('resize', rainH, {passive:true});
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(x){ soon.classList.toggle('raining', x.isIntersecting); }); }).observe(soon);
+    new IntersectionObserver(function(es, o){ es.forEach(function(x){ if (x.isIntersecting){ big.classList.add('open'); o.disconnect(); } }); }, {threshold:.6}).observe(big);
+  } else { soon.classList.add('raining'); big.classList.add('open'); }
+
+  /* cuenta regresiva (Morelos, UTC-6) */
+  var target = new Date('2027-02-20T17:00:00-06:00').getTime();
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var x = Math.max(0, target - Date.now());
+    document.getElementById('cd-d').textContent = Math.floor(x / 864e5);
+    document.getElementById('cd-h').textContent = pad(Math.floor(x / 36e5) % 24);
+    document.getElementById('cd-m').textContent = pad(Math.floor(x / 6e4) % 60);
+    document.getElementById('cd-s').textContent = pad(Math.floor(x / 1e3) % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* pétalos PNG con aleteo 3D (Web Animations, sin librerías) */
+  var petalsOn = false;
+  function startPetals(){
+    if (petalsOn || reduce) return; petalsOn = true;
+    var box = document.getElementById('petals'), MAX = innerWidth < 600 ? 14 : 22, n = 0;
+    function spawn(){
+      if (document.hidden || box.childElementCount >= MAX) return;
+      n++;
+      var big = n % 4 === 0, im = new Image(), R = Math.random;
+      im.alt = ''; im.className = 'petal' + (big ? ' big' : '');
+      im.onerror = function(){ im.remove(); };
+      im.src = 'adornos/p/p' + (1 + Math.floor(R() * 25)) + '.webp';
+      im.style.width = (big ? 34 + R() * 16 : 14 + R() * 12) + 'px';
+      im.style.left = (R() * 100) + '%';
+      box.appendChild(im);
+      var H = innerHeight + 90, dur = (big ? 16 + R() * 6 : 11 + R() * 7) * 1000, op = big ? .2 + R() * .1 : .32 + R() * .2,
+          dx = (R() - .5) * 180, r0 = R() * 360, rx = 180 + R() * 360, ry = 120 + R() * 240;
+      var a = im.animate([
+        {transform:'perspective(600px) translate3d(0,-60px,0) rotate(' + r0 + 'deg) rotateX(0deg) rotateY(0deg)', opacity:0},
+        {opacity:op, offset:.12},
+        {opacity:op, offset:.76},
+        {transform:'perspective(600px) translate3d(' + dx + 'px,' + H + 'px,0) rotate(' + (r0 + 260) + 'deg) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)', opacity:0}
+      ], {duration:dur, easing:'linear'});
+      a.onfinish = function(){ im.remove(); };
+    }
+    for (var i = 0; i < 6; i++) setTimeout(spawn, i * 600);
+    setInterval(spawn, 950);
+  }
+  if (reduce) return;
+
+  /* parallax de portada */
+  var photo = document.getElementById('heroPhoto'), heroIn = document.getElementById('heroIn'), busy = false;
+  function update(){
+    busy = false;
+    var y = scrollY, h = hero.offsetHeight;
+    if (y > h) return;
+    var p = y / h;
+    photo.style.transform = 'translate3d(0,' + (-70 * p).toFixed(1) + 'px,0)';
+    heroIn.style.transform = 'translate3d(0,' + (-90 * p).toFixed(1) + 'px,0)';
+    heroIn.style.opacity = Math.max(0, 1 - p * 1.35).toFixed(3);
+  }
+  addEventListener('scroll', function(){ if (!busy){ busy = true; requestAnimationFrame(update); } }, {passive:true});
+
+  /* el calendario se inclina con el dedo o el mouse */
+  var cal = document.getElementById('cal');
+  cal.addEventListener('pointermove', function(e){ var r = cal.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; cal.style.transform = 'rotateY(' + (x * 12).toFixed(2) + 'deg) rotateX(' + (-y * 12).toFixed(2) + 'deg)'; });
+  cal.addEventListener('pointerleave', function(){ cal.style.transform = ''; });
+})();
+</script>
+</body>
+</html>

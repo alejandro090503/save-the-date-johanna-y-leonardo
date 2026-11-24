@@ -390,7 +390,7 @@ footer{position:relative;padding:clamp(46px,7vh,76px) 22px clamp(100px,13vh,126p
     <img class="orn soft" src="adornos/hoja-1.webp" alt="" aria-hidden="true" style="--w:clamp(70px,9vw,130px);bottom:0;right:-22px;--d:-6s" onerror="this.remove()">
     <div class="sec-in">
       <p class="caps rv">Nuestro destino</p>
-      <h2 class="rv" style="--i:1"><span class="foil">Te esperamos en el lago</span></h2>
+      <h2 class="rv" style="--i:1"><span class="foil">Te esperamos en el Jardín del Lago</span></h2>
       <div class="dest-grid">
         <div class="lev rv" style="--i:2;--dur:8s;--d:-2s"><div class="dest-photo"><img src="venue.jpg" alt="Jardín del Lago, a la orilla del lago de Tequesquitengo" loading="lazy"></div></div>
         <div class="dest-side">
@@ -477,14 +477,14 @@ footer{position:relative;padding:clamp(46px,7vh,76px) 22px clamp(100px,13vh,126p
     rv.forEach(function(el){ io.observe(el); });
   } else rv.forEach(function(el){ el.classList.add('in'); });
 
-  /* lluvia de sobres */
+  /* lluvia de flores */
   var rain = document.getElementById('rain'), soon = document.getElementById('soon'), big = document.getElementById('bigEnv');
   var mobile = innerWidth < 600, ND = reduce ? 0 : (mobile ? 12 : 20);
   for (var k = 0; k < ND; k++){
-    var depth = k % 3, w = [18, 27, 38][depth] + Math.random() * 6;
+    var depth = k % 3, w = [20, 30, 44][depth] + Math.random() * 8;
     var d = document.createElement('div'); d.className = 'drop';
-    d.style.cssText = '--x:' + (Math.random() * 96).toFixed(1) + '%;--w:' + w.toFixed(0) + 'px;--t:' + ([18, 14, 11][depth] + Math.random() * 4).toFixed(1) + 's;--dl:-' + (Math.random() * 18).toFixed(1) + 's;--o:' + [.42, .62, .82][depth];
-    d.innerHTML = '<svg viewBox="0 0 58 40"><rect x="1" y="1" width="56" height="38" rx="2" fill="#FFF8EE" stroke="#B8924A"/><path d="M1 3l28 20L57 3" fill="#F8E6CE" stroke="#B8924A"/><circle cx="29" cy="22" r="4.5" fill="#526A00"/></svg>';
+    d.style.cssText = '--x:' + (Math.random() * 96).toFixed(1) + '%;--w:' + w.toFixed(0) + 'px;--t:' + ([18, 14, 11][depth] + Math.random() * 4).toFixed(1) + 's;--dl:-' + (Math.random() * 18).toFixed(1) + 's;--o:' + [.6, .8, .95][depth];
+    var FL = [2,5,9,12,16,18,1,8,17,2,5,9]; d.innerHTML = '<img src="adornos/p/p' + FL[k % FL.length] + '.webp" alt="" style="display:block;width:100%;height:auto;animation:sway calc(var(--t) / 3) ease-in-out var(--dl) infinite alternate" onerror="this.parentNode.remove()">';
     rain.appendChild(d);
   }
   function rainH(){ rain.style.setProperty('--h', (soon.offsetHeight + 150) + 'px'); }
